@@ -1,0 +1,17 @@
+{
+  "name": "sortable",
+  "version": "0.0.1",
+  "authors": [
+    "John Archer <jahglow@gmail.com>"
+  ],
+  "description": "A script that allows sorting aggregated tables",
+  "keywords": [
+  ],
+  "main": "index.html",
+  "homepage": "https://github.com/jahglow/sortable/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {}
+}
