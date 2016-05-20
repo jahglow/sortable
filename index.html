@@ -9,7 +9,8 @@
     .sorted.asc{color:green}
     .sorted.desc{color:red}
 </style>
-    <table id="confirmit_agg_table" class="t0_table bgred_txtwhite sortable">
+<div id="micPlaceholder"></div>
+<table id="confirmit_agg_table" class="t0_table bgred_txtwhite sortable">
     <colgroup>
         <col width="250">
         <col>
@@ -196,9 +197,13 @@
 </table>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="jquery.confirmit.js"></script>
 <script src="jquery.confirmit.upgradeTable.js"></script>
+<script src="jquery.confirmit.voice-recognition.js"></script>
+<link rel="stylesheet" type="text/css" href="confirmit.voice-recognition.css" />
 <script>
-    $('.sortable').upgradeTable({mainHead:-1, sorting:true, });
+    $('.sortable').upgradeTable({mainHead:-1, sorting:true });
+    $('#micPlaceholder').speechMic();
 </script>
 
 </body>

@@ -1,0 +1,108 @@
+.VoRe {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.VoRe #micContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.VoRe[listening], .VoRe[speaking] {
+    z-index: 10;
+}
+
+.VoRe .micIconWrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.VoRe .micIconWrapper svg {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    fill:#000;
+}
+
+.VoRe[listening] .micIconWrapper, .VoRe[speaking] .micIconWrapper {
+    background-color: #d23f31;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.VoRe[speaking] .micIconWrapper {
+    background-color: #1f8dd6;
+}
+.VoRe[listening] .micIconWrapper>svg, .VoRe[speaking] .micIconWrapper>svg{
+    fill: #fff;
+}
+
+.VoRe:before {
+    content:'';
+    display: none;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 100%;
+}
+
+.VoRe[listening]:before, .VoRe[speaking]:before {
+    display: block;
+    background-color: rgba(0, 0, 0 , 0.1);
+    -webkit-animation: ring 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+@-webkit-keyframes ring {
+    0% {
+        -webkit-transform: scale(0.5);
+    }
+    40% {
+        -webkit-transform: scale(0.8);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+.VoRe:after {
+    content:'';
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    border-radius: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.VoRe[listening]:after, .VoRe[speaking]:after {
+    display: block;
+    -webkit-animation: ring2 1.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+@-webkit-keyframes ring2 {
+    0% {
+        -webkit-transform: scale(0.3);
+    }
+    40% {
+        -webkit-transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}

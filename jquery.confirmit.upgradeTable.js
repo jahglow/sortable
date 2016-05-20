@@ -91,7 +91,7 @@
                     for(var th in model[tr]){
                         var thEl = document.createElement('th');
                         thEl.textContent = model[tr][th].label;
-                        thEl.colSpan = model[tr][th].colspan;
+                        thEl.colspan = model[tr][th].colspan;
                         row.appendChild(thEl);
                     }
                     thead.appendChild(row);
@@ -179,14 +179,11 @@
                 })
             }
         };
-        /*set mainframe as prototype for each iterable object*/
-        function mainframeToObject (object, mainframe){
-            for(var key in mainframe){object[key]=mainframe[key]}
-        }
 
         // iterate through all tables matching selector
         $(this).each(function(index){
-            mainframeToObject(this,mainframe);
+            $.extend(true, this, mainframe );
+
             var thead = $(this).find('thead')[0];
             var tbody = $(this).find('tbody')[0];
             this.generateHeader(this.headerAbstraction(thead), thead);
@@ -194,7 +191,7 @@
 
             console.log(tbody);
         });
-
+        
 
         console.log($(this));
         return this;
